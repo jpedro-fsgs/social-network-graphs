@@ -84,8 +84,8 @@ print("Twitter:\n\n" + gerar_dados(G_twitter))
 - Esses resultados estão alinhados com estudos de redes sociais, que sugerem que redes sociais fechadas (Facebook) tendem a ser mais densas do que redes abertas (Twitter).
 
 ## Slide 7: Representação Visual
-- **Grafo do Facebook** ![Grafo do Facebook](facebook_grafo.png)
-- **Grafo do Twitter** ![Grafo do Twitter](twitter_grafo.png)
+- **Grafo do Facebook** ![Grafo do Facebook](graph_images/facebook_grafo.png)
+- **Grafo do Twitter** ![Grafo do Twitter](graph_images/twitter_grafo.png)
 
 ## Slide 8: Conclusão
 - O estudo demonstrou diferenças estruturais significativas entre as redes sociais analisadas.
