@@ -1,12 +1,15 @@
-Twitter:
-
-Conectividade Média: 33.018719405701916
-Coeficiente de Agregação Médio: 0.5653114686120824
-Menor Caminho Médio: O(n²), não vai rolar
-
 Facebook:
 
+Número de nós: 4039
+Número de arestas: 88234
 Conectividade Média: 43.69101262688784
-Coeficiente de Agregação Médio: 0.6055467186200862
 Menor Caminho Médio: 3.6925068496963913
+Densidade da Rede: 0.010819963503439287
 
+Twitter:
+
+Número de nós: 81306
+Número de arestas: 1342310
+Conectividade Média: 33.018719405701916
+Menor Caminho Médio: O(n²), não vai rolar
+Densidade da Rede: 0.0004061093340594295
