@@ -1,15 +1,15 @@
-# Apresentação: Análise de Redes Sociais com Teoria de Grafos
+# Análise de Redes Sociais com Teoria de Grafos
 
-## Slide 1: Introdução
+## Introdução
 - A análise de redes sociais é essencial para compreender a estrutura das conexões entre indivíduos.
 - Utilizamos a teoria de grafos para modelar e estudar essas interações.
 - Neste trabalho, analisamos redes sociais extraídas do Facebook e Twitter utilizando dados da plataforma SNAP Stanford.
 
-## Slide 2: Objetivos
+## Objetivos
 - Reproduzir e validar a implementação de análise de redes sociais.
 - Examinar a estrutura das redes do Facebook e Twitter em termos de conectividade e densidade.
 
-## Slide 3: Metodologia e Métodos
+## Metodologia e Métodos
 - Dados extraídos de: [SNAP Stanford](https://snap.stanford.edu/data/)
 - Representação dos dados: Matriz de adjacência no formato:
   ```
@@ -24,7 +24,7 @@
   - Formato GraphML para armazenamento dos grafos.
   - Gephi para representação gráfica dos grafos
 
-## Slide 4: Execução
+## Execução
 - Código implementado em Python com NetworkX:
 ```python
 import networkx as nx
@@ -63,7 +63,7 @@ print("Facebook:\n\n" + gerar_dados(G_facebook))
 print("Twitter:\n\n" + gerar_dados(G_twitter))
 ```
 
-## Slide 5: Resultados
+## Resultados
 **Facebook:**
 - Número de nós: 4039
 - Número de arestas: 88234
@@ -78,20 +78,20 @@ print("Twitter:\n\n" + gerar_dados(G_twitter))
 - Menor Caminho Médio: O(n²), não vai rolar
 - Densidade da Rede: 0.0004
 
-## Slide 6: Discussão dos Resultados
+## Discussão dos Resultados
 - A amostra de rede do Facebook apresenta maior densidade e menor caminho médio, sugerindo maior interconectividade entre os usuários.
 - A amostra de rede do Twitter, por ser significativamente maior, apresenta menor densidade e complexidade elevada para cálculo do menor caminho médio.
 - Esses resultados estão alinhados com estudos de redes sociais, que sugerem que redes sociais fechadas (Facebook) tendem a ser mais densas do que redes abertas (Twitter).
 
-## Slide 7: Representação Visual
+## Representação Visual
 - **Grafo do Facebook** ![Grafo do Facebook](graph_images/facebook_grafo.png)
 - **Grafo do Twitter** ![Grafo do Twitter](graph_images/twitter_grafo.png)
 
-## Slide 8: Conclusão
+## Conclusão
 - O estudo demonstrou diferenças estruturais significativas entre as redes sociais analisadas.
 - A metodologia utilizada pode ser aplicada a outras redes sociais para exploração de padrões e características estruturais.
 
-## Slide 9: Referências
+## Referências
 - Dados obtidos de: [SNAP Stanford](https://snap.stanford.edu/data/)
 - Implementação baseada na documentação do NetworkX.
 - Artigo relacionado: "Análise das Redes Sociais à Luz da Teoria de Grafos".
