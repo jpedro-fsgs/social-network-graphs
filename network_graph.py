@@ -13,22 +13,19 @@ def gerar_dados(G):
         else "O(n²), não vai rolar"
     )
 
-    density = nx.density(G)
-
     return (
         f"Número de nós: {number_of_nodes}\n"
         f"Número de arestas: {number_of_edges}\n"
         f"Conectividade Média: {average_degree}\n"
         f"Menor Caminho Médio: {average_shortest_path_length}\n"
-        f"Densidade da Rede: {density}\n"
     )
 
 
-G_twitter = nx.read_edgelist("twitter_combined.txt", create_using=nx.Graph, nodetype=int)
-G_facebook = nx.read_edgelist("facebook_combined.txt", create_using=nx.Graph, nodetype=int)
+G_facebook = nx.read_edgelist("source_data/facebook_combined.txt", create_using=nx.Graph, nodetype=int)
+G_twitter = nx.read_edgelist("source_data/twitter_combined.txt", create_using=nx.Graph, nodetype=int)
 
-nx.write_graphml(G_twitter, "grafo_twitter.graphml")
 nx.write_graphml(G_facebook, "grafo_facebook.graphml")
+nx.write_graphml(G_twitter, "grafo_twitter.graphml")
 
 print("Facebook:\n\n" + gerar_dados(G_facebook))
 print("Twitter:\n\n" + gerar_dados(G_twitter))

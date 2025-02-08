@@ -1,13 +1,21 @@
-# Análise de Redes Sociais com Teoria de Grafos
+# Análise das Redes Sociais à Luz da Teoria de Grafos
 
-## Introdução
-- A análise de redes sociais é essencial para compreender a estrutura das conexões entre indivíduos.
-- Utilizamos a teoria de grafos para modelar e estudar essas interações.
-- Neste trabalho, analisamos redes sociais extraídas do Facebook e Twitter utilizando dados da plataforma SNAP Stanford.
+## Sobre o Projeto
+Este projeto apresenta uma análise das redes de amizade de 64 estudantes da Universidade Regional do Cariri utilizando conceitos da Teoria de Grafos. O estudo foi realizado com base nas interações desses estudantes no Facebook, com o objetivo de identificar padrões de comportamento social.
+- Artigo original: [ANÁLISE DAS REDES SOCIAIS À LUZ DA TEORIA DE GRAFOS DOS ESTUDANTES DE UMA UNIVERSIDADE PÚBLICA](./ANÁLISE%20DAS%20REDES%20SOCIAIS%20À%20LUZ%20DA%20TEORIA%20DE%20GRAFOS%20DOS.pdf)
 
-## Objetivos
-- Reproduzir e validar a implementação de análise de redes sociais.
-- Examinar a estrutura das redes do Facebook e Twitter em termos de conectividade e densidade.
+## Metodologia
+Foram analisadas as redes de amizade de estudantes universitários, avaliando diferentes métricas de grafos para entender padrões sociais e como os alunos interagem entre si nas plataformas digitais. A implementação foi feita utilizando a biblioteca `networkx` em Python.
+
+## Resultados Principais
+### Facebook
+- **Número de nós:** 29.000
+- **Conectividade Média:** 64,5774
+- **Menor Caminho Médio:** 3,978
+- **Observações:**
+  - Estudantes de Ciências Sociais possuem redes mais diversificadas.
+  - Estudantes das áreas de Artes e Engenharias tendem a se manter em grupos fechados.
+  - As redes possuem características de "pequeno mundo".
 
 ## Metodologia e Métodos
 - Dados extraídos de: [SNAP Stanford](https://snap.stanford.edu/data/)
@@ -42,54 +50,48 @@ def gerar_dados(G):
         else "O(n²), não vai rolar"
     )
 
-    density = nx.density(G)
-
     return (
         f"Número de nós: {number_of_nodes}\n"
         f"Número de arestas: {number_of_edges}\n"
         f"Conectividade Média: {average_degree}\n"
         f"Menor Caminho Médio: {average_shortest_path_length}\n"
-        f"Densidade da Rede: {density}\n"
     )
 
 
-G_twitter = nx.read_edgelist("twitter_combined.txt", create_using=nx.Graph, nodetype=int)
-G_facebook = nx.read_edgelist("facebook_combined.txt", create_using=nx.Graph, nodetype=int)
+G_facebook = nx.read_edgelist("source_data/facebook_combined.txt", create_using=nx.Graph, nodetype=int)
+G_twitter = nx.read_edgelist("source_data/twitter_combined.txt", create_using=nx.Graph, nodetype=int)
 
-nx.write_graphml(G_twitter, "grafo_twitter.graphml")
 nx.write_graphml(G_facebook, "grafo_facebook.graphml")
+nx.write_graphml(G_twitter, "grafo_twitter.graphml")
 
 print("Facebook:\n\n" + gerar_dados(G_facebook))
 print("Twitter:\n\n" + gerar_dados(G_twitter))
 ```
 
+## Menor Caminho Médio NetworkX
+- **Average Shortest Path Length** ![Average Shortest Path Length](code_snapshot/code3.png)
+- **Busca em Largura** ![Busca em Largura](code_snapshot/code4.png)
+
 ## Resultados
 **Facebook:**
-- Número de nós: 4039
-- Número de arestas: 88234
-- Conectividade Média: 43.69
-- Menor Caminho Médio: 3.69
-- Densidade da Rede: 0.0108
+- **Número de nós:** 4039
+- **Número de arestas:** 88.234
+- **Conectividade Média:** 43,6910
+- **Menor Caminho Médio:** 3,6925
 
-**Twitter:**
-- Número de nós: 81306
-- Número de arestas: 1342310
-- Conectividade Média: 33.01
-- Menor Caminho Médio: O(n²), não vai rolar
-- Densidade da Rede: 0.0004
+### Twitter
+- **Número de nós:** 81.306
+- **Número de arestas:** 1.342.310
+- **Conectividade Média:** 33,0187
+- **Menor Caminho Médio:** O(n²), não vai rolar
 
-## Discussão dos Resultados
-- A amostra de rede do Facebook apresenta maior densidade e menor caminho médio, sugerindo maior interconectividade entre os usuários.
-- A amostra de rede do Twitter, por ser significativamente maior, apresenta menor densidade e complexidade elevada para cálculo do menor caminho médio.
-- Esses resultados estão alinhados com estudos de redes sociais, que sugerem que redes sociais fechadas (Facebook) tendem a ser mais densas do que redes abertas (Twitter).
 
 ## Representação Visual
-- **Grafo do Facebook** ![Grafo do Facebook](graph_images/facebook_grafo.png)
-- **Grafo do Twitter** ![Grafo do Twitter](graph_images/twitter_grafo.png)
+- **Grafo do Facebook** ![Grafo do Facebook](graph_images/facebook_grafo_c.png)
+- **Grafo do Twitter** ![Grafo do Twitter](graph_images/twitter_grafo_c.png)
 
 ## Conclusão
-- O estudo demonstrou diferenças estruturais significativas entre as redes sociais analisadas.
-- A metodologia utilizada pode ser aplicada a outras redes sociais para exploração de padrões e características estruturais.
+A análise revelou padrões de comportamento distintos entre os estudantes de diferentes áreas do conhecimento. As redes sociais analisadas seguem características de redes de pequeno mundo, onde a maioria das conexões estão a poucos graus de separação. 
 
 ## Referências
 - Dados obtidos de: [SNAP Stanford](https://snap.stanford.edu/data/)
